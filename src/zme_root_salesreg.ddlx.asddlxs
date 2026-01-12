@@ -1,0 +1,382 @@
+@Metadata.layer: #CUSTOMER
+
+@UI: { headerInfo: {
+typeName: 'Sales Register',
+typeNamePlural: 'Sales Register',
+title: { type: #STANDARD, value: 'SalesDocument' } } }
+
+annotate entity ZDV_ROOT_SALES_REG1 with
+{
+
+  @UI.facet:
+   [{ id: 'GeneralData', isSummary: true, label: 'Sales Register', type: #COLLECTION, position: 10 , purpose: #STANDARD },
+    { type: #FIELDGROUP_REFERENCE, targetQualifier: 'GeneralData1', parentId: 'GeneralData', position: 10, label: 'Section 1', id: 'GeneralData1' }]
+  //@UI.hidden: true
+  @UI:{ selectionField: [{ position: 10 }],
+        lineItem: [{ position: 10 }],
+        identification: [{ label: 'Company Code' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 10, importance: #HIGH }]
+   }
+  CompanyCode;
+
+  @UI:{ selectionField: [{ position: 20 }],
+        lineItem: [{ position: 20 }],
+        identification: [{ label: 'Sales Organization' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 20, importance: #HIGH }]
+   }
+  SalesOrganization;
+
+  @UI:{ selectionField: [{ position: 30 }],
+        lineItem: [{ position: 30 }],
+        identification: [{ label: 'Distribution Channel' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 30, importance: #HIGH }]
+   }
+  DistributionChannel;
+
+  @UI:{ selectionField: [{ position: 40 }],
+        lineItem: [{ position: 40 }],
+        identification: [{ label: 'Sold To Party' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 40, importance: #HIGH }]
+   }
+  SoldToParty;
+
+  @UI:{ selectionField: [{ position: 50 }],
+        lineItem: [{ position: 50 }],
+        identification: [{ label: 'ODN No.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 50, importance: #HIGH }]
+   }
+  DocumentReferenceID;
+
+  @UI:{ selectionField: [{ position: 60 }],
+        lineItem: [{ position: 60 }],
+        identification: [{ label: 'Billng Date' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 60, importance: #HIGH }]
+   }
+  BillingDocumentDate;
+
+  @UI:{ selectionField: [{ position: 70 }],
+        lineItem: [{ position: 70 }],
+        identification: [{ label: 'Item Code' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 70, importance: #HIGH }]
+   }
+  Product;
+  @UI:{ selectionField: [{ position: 80 }],
+     lineItem: [{ position: 80 }],
+     identification: [{ label: 'Item Code' }],
+     fieldGroup: [{ qualifier: 'GeneralData1', position: 80, importance: #HIGH }]
+  }
+
+  BillingDocumentType;
+
+  @UI:{ lineItem: [{ position: 90 }],
+        identification: [{ label: 'Item Code' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 90, importance: #HIGH }]
+   }
+  BillingDocumentTypeName;
+
+
+  @UI:{ lineItem: [{ position: 100 }],
+        identification: [{ label: 'Customer Name' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 100, importance: #HIGH }]
+   }
+  CustomerName;
+
+  //@UI:{ lineItem: [{ position: 90 }],
+  //      identification: [{ label: 'Customer Name' }]
+  // }
+  //CUSTOMEtype;
+
+  @UI:{ lineItem: [{ position: 110 }],
+        identification: [{ label: 'Sales Order No.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 110, importance: #HIGH }]
+   }
+  SalesDocument;
+
+  @UI:{ lineItem: [{ position: 120 }],
+        identification: [{ label: 'Sales Order Date.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 120, importance: #HIGH }]
+   }
+  CreationDate;
+
+  @UI:{ lineItem: [{ position: 130 }],
+        identification: [{ label: 'Sales Order Reason' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 130, importance: #HIGH }]
+   }
+  SDDocumentReason;
+
+  @UI:{ lineItem: [{ position: 140 }],
+        identification: [{ label: 'Sales Order Reason' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 140, importance: #HIGH }]
+   }
+  SDDocumentReasonText;
+
+  @UI:{ lineItem: [{ position: 150 }],
+        identification: [{ label: 'Plant' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 150, importance: #HIGH }]
+   }
+  Plant;
+
+  @UI:{ lineItem: [{ position: 160 }],
+        identification: [{ label: 'Customer PO Number' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 160, importance: #HIGH }]
+   }
+  PurchaseOrderByCustomer;
+
+  @UI:{ lineItem: [{ position: 170 }],
+        identification: [{ label: 'Item Number' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 170, importance: #HIGH }]
+   }
+  SalesOrderItem;
+
+  @UI:{ lineItem: [{ position: 180 }],
+        identification: [{ label: 'Item Description' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 180, importance: #HIGH }]
+   }
+  ProductDescription;
+  
+  @UI:{ lineItem: [{ position: 190 }],
+        identification: [{ label: 'Order Quantity' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 190, importance: #HIGH }]
+   }
+  OrderQuantity;
+
+  @UI:{ lineItem: [{ position: 200 }],
+        identification: [{ label: 'Net Price Amount' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 200, importance: #HIGH }]
+   }
+  NetPriceAmount;
+
+  @UI:{ lineItem: [{ position: 210 }],
+        identification: [{ label: 'Delivery No.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 210, importance: #HIGH }]
+   }
+  ReferenceSDDocument;
+
+  @UI:{ lineItem: [{ position: 220 }],
+        identification: [{ label: 'Delivery Item' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 220, importance: #HIGH }]
+   }
+  ReferenceSDDocumentItem;
+
+  @UI:{ lineItem: [{ position: 230 }],
+        identification: [{ label: 'Billing No.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 230, importance: #HIGH }]
+   }
+  BillingDocument;
+
+  @UI:{ lineItem: [{ position: 240 }],
+     identification: [{ label: 'Billing No.' }],
+     fieldGroup: [{ qualifier: 'GeneralData1', position: 240, importance: #HIGH }]
+  }
+  BillingDocumentIsCancelled;
+  
+  @UI:{ lineItem: [{ position: 250 }],
+  identification: [{ label: 'Cancelled Billing No.' }],
+  fieldGroup: [{ qualifier: 'GeneralData1', position: 250, importance: #HIGH }]
+  }
+  CancelledBillingDocumnet;
+
+  @UI:{ lineItem: [{ position: 260 }],
+        identification: [{ label: 'Billing Item No.' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 260, importance: #HIGH }]
+   }
+  BillingDocumentItem;
+
+  @UI:{ lineItem: [{ position: 270 }],
+        identification: [{ label: 'Billing Quantity' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 270, importance: #HIGH }]
+   }
+  BillingQuantity;
+  
+  @UI:{ lineItem: [{ position: 280 }],
+        identification: [{ label: 'Batch Quantity' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 280, importance: #HIGH }]
+   }
+  ActualDeliveryQuantity;
+
+  @UI:{ lineItem: [{ position: 290 }],
+        identification: [{ label: 'Unit Price' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 290, importance: #HIGH }]
+   }
+  unit_price;
+
+  @UI:{ lineItem: [{ position: 300, label: 'Discount Rate' }],
+        identification: [{ label: 'Discount Rate' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 300, importance: #HIGH }]
+     }
+  discount_rate;
+  
+  @UI:{ lineItem: [{ position: 310 }],
+        identification: [{ label: 'Total Price' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 310, importance: #HIGH }]
+   }
+  total_price;
+
+  @UI:{ lineItem: [{ position: 320 }],
+        identification: [{ label: 'VAT' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 320, importance: #HIGH }]
+   }
+  vat_price;
+
+  @UI:{ lineItem: [{ position: 330 }],
+        identification: [{ label: 'TCS' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 330, importance: #HIGH }]
+   }
+  tcs_price;
+
+  @UI:{ lineItem: [{ position: 340 }],
+        identification: [{ label: 'Freight' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 340, importance: #HIGH }]
+   }
+  freight_price;
+
+  @UI:{ lineItem: [{ position: 350 }],
+        identification: [{ label: 'CGST' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 350, importance: #HIGH }]
+   }
+  cgst_price;
+
+  @UI:{ lineItem: [{ position: 360 }],
+        identification: [{ label: 'SGST' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 360, importance: #HIGH }]
+   }
+  sgst_price;
+
+  @UI:{ lineItem: [{ position: 370 }],
+        identification: [{ label: 'UTGST' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 370, importance: #HIGH }]
+   }
+  ugst_price;
+
+  @UI:{ lineItem: [{ position: 380 }],
+        identification: [{ label: 'IGST' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 380, importance: #HIGH }]
+   }
+  igst_price;
+
+  @UI:{ lineItem: [{ position: 390 }],
+        identification: [{ label: 'Round Off' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 390, importance: #HIGH }]
+   }
+  round_off;
+
+  @UI:{ lineItem: [{ position: 400 }],
+        identification: [{ label: 'Discount' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 400, importance: #HIGH }]
+   }
+  discount;
+
+  @UI:{ lineItem: [{ position: 410 }],
+        identification: [{ label: 'Total' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 410, importance: #HIGH }]
+   }
+  total;
+  
+  @UI:{ lineItem: [{ position: 420 }],
+       identification: [{ label: 'Party PAN' }],
+       fieldGroup: [{ qualifier: 'GeneralData1', position: 420, importance: #HIGH }]
+  }
+  Party_PAN;
+  
+  @UI:{ lineItem: [{ position: 430 }],
+       identification: [{ label: 'HSN/SAC' }],
+       fieldGroup: [{ qualifier: 'GeneralData1', position: 430, importance: #HIGH }]
+  }
+  hsn;
+  
+  @UI:{ lineItem: [{ position: 440 }],
+       identification: [{ label: 'Batch' }],
+       fieldGroup: [{ qualifier: 'GeneralData1', position: 440, importance: #HIGH }] }
+  Batch;
+  
+  @UI:{ lineItem: [{ position: 450 }],
+      identification: [{ label: 'Division' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 450, importance: #HIGH }] }
+  Division;
+  
+  @UI:{ lineItem: [{ position: 460 }],
+      identification: [{ label: 'City Name' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 460, importance: #HIGH }] }
+  CityName;
+  
+  @UI:{ lineItem: [{ position: 470 }],
+      identification: [{ label: 'State' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 470, importance: #HIGH }] }
+  state;
+  
+  @UI:{ lineItem: [{ position: 480 }],
+      identification: [{ label: 'Sales Person name' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 480, importance: #HIGH }] }
+  salespersonname;
+  
+  @UI:{ lineItem: [{ position: 490 }],
+      identification: [{ label: 'Freight Price' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 490, importance: #HIGH }] }
+  freightprice;
+  
+  @UI:{ lineItem: [{ position: 500 }],
+      identification: [{ label: 'Transporter Name' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 500, importance: #HIGH }] }
+  transportername;
+  
+  @UI:{ lineItem: [{ position: 510 }],
+      identification: [{ label: 'Dealer name' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 510, importance: #HIGH }] }
+  dealername;
+  
+  @UI:{ lineItem: [{ position: 520 }],
+        identification: [{ label: 'Dealer Price' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 520, importance: #HIGH }] }
+  dealerprice;
+  
+  @UI:{ lineItem: [{ position: 530 }],
+      identification: [{ label: 'Supervisor Name' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 530, importance: #HIGH }] }
+  supervisorname;
+  
+  @UI:{ lineItem: [{ position: 540 }],
+        identification: [{ label: 'Supervisor Price' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 540, importance: #HIGH }] }
+  supervisorprice;
+  
+  @UI:{ lineItem: [{ position: 550 }],
+        identification: [{ label: 'Base Product' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 550, importance: #HIGH }] }
+  pricingreferencematerial;
+  
+  @UI:{ lineItem: [{ position: 560 }],
+        identification: [{ label: 'Weight Item Wise' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 560, importance: #HIGH }] }
+  itemgrossweight;
+  
+  @UI:{ lineItem: [{ position: 570 }],
+        identification: [{ label: 'Weight Item Batch Wise' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 570, importance: #HIGH }] }
+  itemgrossbatchweight;
+  
+  @UI:{ lineItem: [{ position: 580 }],
+        identification: [{ label: 'Sales Group' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 580, importance: #HIGH }] }
+  salesgroup;
+  
+  @UI:{ lineItem: [{ position: 590 }],
+        identification: [{ label: 'Sales Office' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 590, importance: #HIGH }] }
+  salesoffice;
+  
+  @UI:{ lineItem: [{ position: 600 }],
+        identification: [{ label: 'Vehicle Number' }],
+        fieldGroup: [{ qualifier: 'GeneralData1', position: 600, importance: #HIGH }] }
+  vehicleno;
+  
+  @UI:{ lineItem: [{ position: 610 }],
+      identification: [{ label: 'Accounting Document' }],
+      fieldGroup: [{ qualifier: 'GeneralData1', position: 610, importance: #HIGH }] }
+  AccountingDocument;
+  
+  @UI:{ lineItem: [{ position: 620 }],
+     identification: [{ label: 'Business Area' }],
+     fieldGroup: [{ qualifier: 'GeneralData1', position: 620, importance: #HIGH }] }
+  businessplace;
+
+}
